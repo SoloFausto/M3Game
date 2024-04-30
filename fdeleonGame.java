@@ -83,7 +83,12 @@ public class fdeleonGame extends GameEngine {
 
         TaskPicker taskPicker = new TaskPicker();
         while (true) {
-            System.out.println(taskPicker.getTextFieldInput()); // I swear to god professor, if I try to remove THIS print statement the program doesn't work. I know that the CPU usage goes up and it clutters up the console.
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } 
             if(taskPicker.getTextFieldInput() != null){
                 selectedTaskName = taskPicker.getTextFieldInput();
                 break;
